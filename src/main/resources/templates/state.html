@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Dash board</title>
+	<th:block th:include="layout.html :: headerfiles"></th:block>
+</head>
+</head>
+
+<body>
+ 	<header th:insert="layout :: navbar"> </header>
+ 	
+    <div class="container-fluid">
+      <div class="row">
+ 		<div th:insert="layout :: sidebar"></div>
+ 		
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dictionary</h1>
+
+          <h2 class="sub-header">Section title</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Short Name</th>
+                  <th>Name</th>
+                </tr>
+              </thead>
+              <tbody th:each="state : ${stateList}">
+                <tr>
+                  <td><span th:text="${state.id}"></span></td>
+                  <td><span th:text="${state.shortname}"></span></td>
+                  <td><span th:text="${state.name}"></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
