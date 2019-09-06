@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.domain.Dictionary;
 
 @Repository
-public interface DictionaryRepository extends JpaRepository<Dictionary, Integer> {
+public interface DictionaryRepository extends JpaRepository<Dictionary, Integer>, DictionarySearchCustom{
 
 }

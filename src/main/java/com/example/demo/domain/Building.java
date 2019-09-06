@@ -1,5 +1,7 @@
 package com.example.demo.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -37,6 +39,7 @@ public class Building {
 	
 	private String fax;
 
-	@OneToMany(mappedBy = "building", cascade = CascadeType.ALL)
-	private List<Block> blocks;
+//	@OneToMany(mappedBy = "building", cascade = CascadeType.ALL)
+//	@JsonIgnoreProperties("building","apartments")
+//	private List<Block> blocks;
 }

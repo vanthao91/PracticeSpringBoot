@@ -2,6 +2,7 @@ package com.example.demo.serviceImpl;
 
 import java.util.List;
 
+import com.example.demo.repository.DictionarySearchCustom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +20,10 @@ public class DictionaryServiceImpl implements DictionaryService {
 	public List<Dictionary> getAll() {
 		// TODO Auto-generated method stub
 		return dictionaryRepository.findAll();
-	} 
+	}
+
+	@Override
+	public List<Object> doSearch(String tableName) {
+		return dictionaryRepository.search(tableName);
+	}
 }

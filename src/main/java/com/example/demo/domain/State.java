@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.UniqueElements;
 
 @Entity
@@ -62,5 +63,16 @@ public class State {
 	private String name;
 	
 	@OneToMany (mappedBy = "state", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("state")
 	private List<City> cities;
+
+	@Override
+	public String toString() {
+		return "State{" +
+				"id=" + id +
+				", shortName='" + shortName + '\'' +
+				", name='" + name + '\'' +
+				", cities=" + cities +
+				'}';
+	}
 }
